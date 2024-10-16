@@ -22,8 +22,20 @@
     "unstyled",
     "passthrough"
   ],
+  "scripts": {
+    "compile:css": "/usr/local/bin/sass themes/bootstrap4/bootstrap4-light/blue/theme.scss:build/bootstrap4.css",
+    "autoprefix:css": "npx postcss build/*.css --use autoprefixer -d build/",
+    "minify:css": "postcss build/bootstrap4.css --dir build/min"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/primefaces/primevue-sass-theme/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
+    "postcss-preset-env": "^10.0.7"
   }
 }
