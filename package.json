@@ -25,7 +25,9 @@
   "scripts": {
     "compile:css": "/usr/local/bin/sass themes/bootstrap4/bootstrap4-light/blue/theme.scss:build/bootstrap4.css",
     "autoprefix:css": "npx postcss build/*.css --use autoprefixer -d build/",
-    "minify:css": "postcss build/bootstrap4.css --dir build/min"
+    "minify:css": "postcss build/bootstrap4.css --dir build/min",
+    "compile:sass": "sass themes/bootstrap4/bootstrap4-light/blue/theme.scss:build/bootstrap4.css",
+    "generate:bootstrap": "npm run compile:sass && postcss build/bootstrap4.css --use=autoprefixer --output=build/bootstrap4.min.css"
   },
   "license": "MIT",
   "bugs": {
@@ -36,6 +38,7 @@
     "cssnano": "^7.0.6",
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
-    "postcss-preset-env": "^10.0.7"
+    "postcss-preset-env": "^10.0.7",
+    "sass": "^1.79.5"
   }
 }
